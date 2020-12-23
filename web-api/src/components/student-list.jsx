@@ -8,22 +8,36 @@ class StudentList extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api.prashantranjan.com/get-data.php`).then((res) => {
-      console.log('res', res);
-      this.setState({ students: res.data });
-    });
+    axios
+      .get(`https://api.prashantranjan.com/get-data.php`)
+      .then((res) => {
+        console.log('res', res);
+        this.setState({ students: res.data.reverse() });
+      })
+      .catch((error) => {
+        console.log('error ->', error);
+      });
   }
 
   render() {
     return (
       <React.Fragment>
+        <div className="py-5 text-center">
+          <h2>All Student Details</h2>
+          <p className="lead">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo ad
+            praesentium eveniet vel assumenda aspernatur quia ab unde doloribus,
+            saepe reiciendis in quae cum quos corrupti dicta veniam eum
+            mollitia?
+          </p>
+        </div>
         <table className="table table-bordered border-primary">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Address</th>
             </tr>
           </thead>
           <tbody>

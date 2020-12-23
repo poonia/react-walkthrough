@@ -5,6 +5,7 @@ import Navigation from './components/navigation';
 // import NoResult from './components/no-result';
 import StudentList from './components/student-list';
 import AddStudent from './components/add-student';
+import Comments from './components/comments';
 
 class App extends Component {
   constructor() {
@@ -27,6 +28,9 @@ class App extends Component {
             </Route>
             <Route path="/add">
               <AddStudent />
+            </Route>
+            <Route path="/comments">
+              <Comments />
             </Route>
           </Switch>
 
